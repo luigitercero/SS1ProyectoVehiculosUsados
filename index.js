@@ -15,9 +15,9 @@ app.get('/about', function (req, res) {
 });
 
 // escuchar
-app.listen(80);
+app.listen(3000);
 
-console.log("Servidor Express escuchando en modo %s", app.settings.env);
+console.log("Servidor Express escuchando en modo 3000 %s", app.settings.env);
 
 app.get('/hola.txt', function (req, res) {
     res.send('Hola mundo');

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagrama formula="%t_%c" version="8" nombreProyecto="SS1Cars" nombreAutor="luigitercero">
+  <DataBase>2</DataBase>
+  <lista-item>
+    <item type="modelo-tabla" id="{4ee660fc-aa18-49c2-af68-ab67d358b71d}">
+      <nombre>Carro</nombre>
+      <posicion>
+        <x>-486</x>
+        <y>-1074</y>
+      </posicion>
+      <lista-columnas>
+        <columna tipoDato="INTEGER" llaveprimaria="1" nombre="Carro" notas="" llaveUnica="" nulo="0" id="{24c037e7-3736-417c-8891-a6aed9249486}"/>
+        <columna tipoDato="CHAR(20)" llaveprimaria="0" nombre="Linea" notas="" llaveUnica="" nulo="0" id="{7f42d327-53e5-4cad-b954-d8d87846c66e}"/>
+        <columna tipoDato="CHAR(20)" llaveprimaria="0" nombre="Modelo" notas="" llaveUnica="" nulo="0" id="{0f501fb8-1bd2-4c30-8b7b-42f85cf70693}"/>
+        <columna tipoDato="CHAR(100)" llaveprimaria="0" nombre="Descripcion" notas="" llaveUnica="" nulo="0" id="{b404cf6f-27c1-439f-b3ea-48106d8b3d07}"/>
+        <columna tipoDato="CHAR(20)" llaveprimaria="0" nombre="Marca" notas="" llaveUnica="" nulo="0" id="{5a6fba9d-058c-4cb9-b4ce-bf30cfd64d12}"/>
+      </lista-columnas>
+    </item>
+    <item type="modelo-tabla" id="{bfe9c7e6-9968-4ae1-af59-071668a86802}">
+      <nombre>VentaCarro</nombre>
+      <posicion>
+        <x>-288</x>
+        <y>-890</y>
+      </posicion>
+      <lista-columnas/>
+    </item>
+    <item type="modelo-tabla" id="{0f1664db-cdd2-4850-8ea9-53636dc20140}">
+      <nombre>Venta</nombre>
+      <posicion>
+        <x>-176</x>
+        <y>-1089</y>
+      </posicion>
+      <lista-columnas>
+        <columna tipoDato="INTEGER" llaveprimaria="1" nombre="Venta" notas="" llaveUnica="" nulo="0" id="{75fc2d65-418b-4868-a522-ced672f33516}"/>
+      </lista-columnas>
+    </item>
+    <item type="modelo-tabla" id="{22794a61-e85b-4a21-b010-822a0073338a}">
+      <nombre>Ciente</nombre>
+      <posicion>
+        <x>-71</x>
+        <y>-936</y>
+      </posicion>
+      <lista-columnas>
+        <columna tipoDato="INTEGER" llaveprimaria="1" nombre="Cliente" notas="" llaveUnica="" nulo="0" id="{a2cd76d2-4d45-45f3-888e-c0ea03e53899}"/>
+        <columna tipoDato="CHAR(50)" llaveprimaria="0" nombre="Nombre" notas="" llaveUnica="" nulo="0" id="{fb2176ed-634c-41e8-8cee-f4c966c670ff}"/>
+      </lista-columnas>
+    </item>
+    <item type="modelo-relacion" id="{aed225f3-d0fd-4f37-b21a-ef905ce8c56f}">
+      <inicio>
+        <posicion>
+          <x>2.21875</x>
+          <y>-936</y>
+        </posicion>
+        <angulo>90</angulo>
+        <cardinalidad>Uno</cardinalidad>
+        <cardinalidadLinea>Puede</cardinalidadLinea>
+        <owner>{22794a61-e85b-4a21-b010-822a0073338a}</owner>
+      </inicio>
+      <final>
+        <posicion>
+          <x>-55.3542</x>
+          <y>-1024.63</y>
+        </posicion>
+        <angulo>270</angulo>
+        <cardinalidad>Muchos</cardinalidad>
+        <cardinalidadLinea>Debe</cardinalidadLinea>
+        <owner>{0f1664db-cdd2-4850-8ea9-53636dc20140}</owner>
+      </final>
+    </item>
+    <item type="modelo-relacion" id="{3df22ab9-a439-4026-adbb-86b13bbedf5e}">
+      <inicio>
+        <posicion>
+          <x>-115.677</x>
+          <y>-1024.63</y>
+        </posicion>
+        <angulo>270</angulo>
+        <cardinalidad>Uno</cardinalidad>
+        <cardinalidadLinea>Puede</cardinalidadLinea>
+        <owner>{0f1664db-cdd2-4850-8ea9-53636dc20140}</owner>
+      </inicio>
+      <final>
+        <posicion>
+          <x>-188.177</x>
+          <y>-890</y>
+        </posicion>
+        <angulo>90</angulo>
+        <cardinalidad>Muchos</cardinalidad>
+        <cardinalidadLinea>Debe</cardinalidadLinea>
+        <owner>{bfe9c7e6-9968-4ae1-af59-071668a86802}</owner>
+      </final>
+    </item>
+    <item type="modelo-relacion" id="{925d553c-b17c-46e2-ac70-958554cced3a}">
+      <inicio>
+        <posicion>
+          <x>-398.508</x>
+          <y>-955.625</y>
+        </posicion>
+        <angulo>270</angulo>
+        <cardinalidad>Uno</cardinalidad>
+        <cardinalidadLinea>Puede</cardinalidadLinea>
+        <owner>{4ee660fc-aa18-49c2-af68-ab67d358b71d}</owner>
+      </inicio>
+      <final>
+        <posicion>
+          <x>-238.089</x>
+          <y>-890</y>
+        </posicion>
+        <angulo>90</angulo>
+        <cardinalidad>Muchos</cardinalidad>
+        <cardinalidadLinea>Debe</cardinalidadLinea>
+        <owner>{bfe9c7e6-9968-4ae1-af59-071668a86802}</owner>
+      </final>
+    </item>
+  </lista-item>
+</diagrama>

@@ -1,4 +1,5 @@
-
+//puerto
+var port = 3000;
 
 // importar
 var express = require('express');
@@ -15,9 +16,10 @@ app.get('/about', function (req, res) {
 });
 
 // escuchar
-app.listen(3000);
 
-console.log("Servidor Express escuchando en modo 3000 %s", app.settings.env);
+app.listen(port);
+
+console.log("Servidor Express escuchando en modo %s  %s ",port ,app.settings.env);
 
 app.get('/hola.txt', function (req, res) {
     res.send('Hola mundo');

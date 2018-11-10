@@ -34,3 +34,33 @@ app.get('/hola.json', function (req, res) {
     res.contentType('application/json');
     res.sendfile(__dirname + '/hola.json');
 });
+
+
+var mysql = require('mysql');
+
+var connection = mysql.createConnection({
+    host: 'seminario1.cdrcqs8khrfy.us-west-2.rds.amazonaws.com',
+    user: 'seminario1',
+    password: 'seminario1'
+});
+
+
+app.get('/hola', function (request, response) {
+    connection.connect(function (err) {
+        if (err) {
+            console.error('error connecting: ' + err.stack);
+            return;
+        }
+
+        console.log('connected as id ' + connection.threadId);
+        connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
+            if (error) throw error;
+            console.log('The solution is: ', results[0].solution);
+        });
+
+        connection.end();
+
+    });
+
+    response.send('Hello World!')
+})

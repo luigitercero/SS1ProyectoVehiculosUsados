@@ -58,6 +58,12 @@ app.get('/hola', function (request, response) {
             console.log('The solution is: ', results[0].solution);
         });
 
+        onsole.log('connected as id ' + connection.threadId);
+        connection.query('show databases', function (error, results, fields) {
+            if (error) throw error;
+            console.log('The solution is: ', results[0].solution);
+        });
+
         connection.end();
 
     });

@@ -60,10 +60,10 @@ var connection = mysql.createConnection({
 
 
 app.post('/createcar', async function (req,res){
-    var dato ;
+    
     var body = req.body;
     console.log(body)
-   connection.connect(function (err) {
+    var dato  = connection.connect(function (err) {
         if (err) {
             console.error('error connecting: ' + err.stack);
             return;
@@ -75,7 +75,7 @@ app.post('/createcar', async function (req,res){
             dato = results;
         });
         connection.end();
-       
+       return dato
     });
 
     res.send(dato + "haz de enviar algo");

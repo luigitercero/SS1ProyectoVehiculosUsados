@@ -97,12 +97,11 @@ app.get('/cars',async function (req,res) {
             let resultado = JSON.stringify({ "status": 200, "error": null, "response": results });
             console.log(resultado);
             //res.send(JSON.stringify({ "status": 200, "error": null, "response": results }));
-            return results;
+            res.send(resultado);
         })
+
         connection.end();
-        console.log("hola2" + dato)
-        //res.send(dato);
-        return dato;
+    
     });
     console.log("hola3" + dato)
     res.send(dato);

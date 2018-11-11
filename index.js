@@ -60,7 +60,9 @@ var connection = mysql.createConnection({
 
 
 app.post('/createcar', async function (req,res){
-    
+    res.statusCode = 404;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Cannot ' + req.method + ' ' + req.url);
     var body = req.body;
     console.log(body)
     var dato  = connection.connect(function (err) {

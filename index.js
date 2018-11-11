@@ -62,6 +62,7 @@ var connection = mysql.createConnection({
 app.post('/createcar', async function (req,res){
     var dato ;
     var body = req.body;
+    console.log(body)
    connection.connect(function (err) {
         if (err) {
             console.error('error connecting: ' + err.stack);

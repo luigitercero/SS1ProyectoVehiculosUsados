@@ -105,7 +105,7 @@ app.get('/cars',async function (req,res) {
         })
 
        
-        connection.end();
+        //connection.end();
     });
     //console.log("hola3" + dato)
     //res.send(dato);
@@ -131,7 +131,7 @@ app.get('/hola', function (request, response) {
             console.log('The solution is: ', results);
         });
 
-        connection.end();
+        //connection.end();
 
     });
 

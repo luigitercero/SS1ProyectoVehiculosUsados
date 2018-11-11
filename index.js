@@ -52,15 +52,15 @@ app.get('/hola.json', function (req, res) {
 
 var mysql = require('mysql');
 
-var connection = mysql.createConnection({
-    host: 'seminario1.cdrcqs8khrfy.us-west-2.rds.amazonaws.com',
-    user: 'seminario1',
-    password: 'seminario1'
-});
 
 
 app.post('/createcar', async function (req,res){
-  
+    var connection = mysql.createConnection({
+        host: 'seminario1.cdrcqs8khrfy.us-west-2.rds.amazonaws.com',
+        user: 'seminario1',
+        password: 'seminario1'
+    });
+
     var body = req.body;
     console.log(body)
     var dato  = connection.connect(function (err) {
@@ -84,7 +84,12 @@ app.post('/createcar', async function (req,res){
 })
 
 app.get('/cars',async function (req,res) {
-   
+    var connection = mysql.createConnection({
+        host: 'seminario1.cdrcqs8khrfy.us-west-2.rds.amazonaws.com',
+        user: 'seminario1',
+        password: 'seminario1'
+    });
+
     res.statusCode = 404;
     res.setHeader('Content-Type', 'application/json');
     let dato = connection.connect( function (err){
@@ -113,6 +118,12 @@ app.get('/cars',async function (req,res) {
 
 
 app.get('/hola', function (request, response) {
+    var connection = mysql.createConnection({
+        host: 'seminario1.cdrcqs8khrfy.us-west-2.rds.amazonaws.com',
+        user: 'seminario1',
+        password: 'seminario1'
+    });
+
     connection.connect(function (err) {
         if (err) {
             console.error('error connecting: ' + err.stack);

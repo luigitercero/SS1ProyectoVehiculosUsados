@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+
+
+    <meta content="">
+    <style></style>
+    <!--AngularJS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+    <!--firebase auth to db-->
+    <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
+
+    <script src="js/firebasedbstring.js"></script>
+
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+    <!--jQuery-->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!---->
+    <script src="js/auto/create.js"></script>
+
+    <!---->
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body ng-controller="ctrl">
+    <!--{{logedin}}-->
+    <script src="js/materialize.min.js"></script>
+    <div class="container">
+        <div id="login-page" class="row">
+            <div class="col s5 offset-s3 z-depth-6 card-panel">
+                <form class="login-form">
+                    <div class="row">
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input class="validate" id="txtLine" type="text" ng-model="car.line">
+                            <label for="Line" data-error="wrong" data-success="right">Linea</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input class="validate" id="txtEmail" type="text" ng-model="car.model">
+                            <label for="Line" data-error="wrong" data-success="right">Modelo</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="txtPassWord" type="text" ng-model="car.description">
+                        <label for="Line" data-error="wrong" data-success="right">Descripcion</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input class="validate" id="txtAge" type="text" ng-model="car.marca">
+                            <label for="age" data-error="wrong" data-success="right">Marca</label>
+                        </div>
+                    </div>
+                    <div>
+                    <form action="#">
+                        <div class="file-field input-field">
+                            <div class="btn">
+                            <span>File</span>
+                            <input type="file" id="fileButton" />
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <a id='btnRegister' ng-click="createCar()" class="btn waves-effect waves-light col s12">Registrar</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="js/auto/addPhoto.js"></script>
+</body>
+</html>

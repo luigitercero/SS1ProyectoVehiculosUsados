@@ -9,10 +9,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-      "express": "^4.16.4",
-      "ejs": "latest",
-      "aws-sdk": "latest",
-      "body-parser": "latest",
-      "mysql": "latest"
+    "aws-sdk": "latest",
+    "body-parser": "^1.18.3",
+    "ejs": "latest",
+    "express": "^4.16.4",
+    "mysql": "latest",
+    "xmlhttprequest": "^1.8.0",
+    "cors": "^2.8.4"
   }
 }

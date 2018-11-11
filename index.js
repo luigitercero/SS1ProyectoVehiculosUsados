@@ -6,8 +6,22 @@ var express = require('express');
 
 // instanciar
 var app = express();
+const bodyParser = require('body-parser');
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+const cors = require("cors");
+app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(bodyParser.json());
+
+app.use(cors({ origin: true }));
+
+app.use(express.static('public'));
 // ruteo
+app.get('/create', function (req, res) {
+    console.log(req);
+    res.sendfile(__dirname + '/public/CreateCar.html');
+});
+
 app.get('/', function (req, res) {
     res.sendfile(__dirname + '/public/index.html');
 });
@@ -45,6 +59,35 @@ var connection = mysql.createConnection({
 });
 
 
+app.post('/createcar', async function (req,res){
+    var dato ;
+   connection.connect(function (err) {
+        if (err) {
+            console.error('error connecting: ' + err.stack);
+            return;
+        }
+       let consulta = "INSERT INTO mydb.Carro (linea,modelo,descripcion,marca) VALUES (\"picanto\",2017,\"carro de la titi\",\"kia\")"
+
+        connection.query(consulta,function(error, results,fields){
+            if (error) throw error;
+            console.log('The solution is: ', results);
+            dato = results;
+
+        });
+        connection.end();
+       res.send(dato);
+    });
+
+    //var body = req.body;
+    //console.log(body);
+   // res.send("{hola:25}");
+})
+
+app.get('/cars',async function (req,res) {
+
+});
+
+
 app.get('/hola', function (request, response) {
     connection.connect(function (err) {
         if (err) {
@@ -61,7 +104,7 @@ app.get('/hola', function (request, response) {
         onsole.log('connected as id ' + connection.threadId);
         connection.query('show databases', function (error, results, fields) {
             if (error) throw error;
-            console.log('The solution is: ', results[0].solution);
+            console.log('The solution is: ', results);
         });
 
         connection.end();

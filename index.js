@@ -100,7 +100,7 @@ app.get('/cars',async function (req,res) {
             res.send(resultado);
         })
 
-        connection.end();
+       
     
     });
     console.log("hola3" + dato)

@@ -61,25 +61,23 @@ var connection = mysql.createConnection({
 
 app.post('/createcar', async function (req,res){
     var dato ;
+    var body = req.body;
    connection.connect(function (err) {
         if (err) {
             console.error('error connecting: ' + err.stack);
             return;
         }
-       let consulta = "INSERT INTO mydb.Carro (linea,modelo,descripcion,marca) VALUES (\"picanto\",2017,\"carro de la titi\",\"kia\")"
-
+       let consulta = `INSERT INTO mydb.Carro (linea,modelo,descripcion,marca) VALUES (${body.line},${body.model},${body.description},${body.marca})`
         connection.query(consulta,function(error, results,fields){
             if (error) throw error;
             console.log('The solution is: ', results);
             dato = results;
-
         });
         connection.end();
        res.send(dato);
     });
 
-    //var body = req.body;
-    //console.log(body);
+   
    // res.send("{hola:25}");
 })
 

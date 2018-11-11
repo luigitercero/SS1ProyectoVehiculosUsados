@@ -84,7 +84,21 @@ app.post('/createcar', async function (req,res){
 })
 
 app.get('/cars',async function (req,res) {
-
+    let dato = connection.connect (err=>{
+        if (err) {
+            console.error('error connecting: ' + err.stack);
+            return;
+        }
+        let consulta = `SELECT * FROM mydb.Carro`
+        let dato = connection.query(consulta,(error,results,fields)=>{
+            if (error) throw error;
+            console.log('The solution is: ', results);
+            return results;
+        })
+        connection.end();
+        return dato;
+    });
+    res.send(dato);
 });
 
 

@@ -105,7 +105,7 @@ app.get('/cars',async function (req,res) {
         })
 
        
-    
+        connection.end();
     });
     //console.log("hola3" + dato)
     //res.send(dato);

@@ -75,10 +75,10 @@ app.post('/createcar', async function (req,res){
             dato = results;
         });
         connection.end();
-       res.send(dato);
+       
     });
 
-   
+    res.send(dato + "haz de enviar algo");
    // res.send("{hola:25}");
 })
 

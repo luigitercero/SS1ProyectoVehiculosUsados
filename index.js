@@ -84,9 +84,8 @@ app.post('/createcar', async function (req,res){
 })
 
 app.get('/cars',async function (req,res) {
-    res.statusCode = 404;
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Cannot ' + req.method + ' ' + req.url);
+   
+   
     let dato = connection.connect( function (err){
         if (err) {
             console.error('error connecting: ' + err.stack);
@@ -100,6 +99,8 @@ app.get('/cars',async function (req,res) {
             let resultado = JSON.stringify({ "status": 200, "error": null, "response": results });
             console.log(resultado);
             //res.send(JSON.stringify({ "status": 200, "error": null, "response": results }));
+            res.statusCode = 404;
+            res.setHeader('Content-Type', 'application/json');
             res.send(resultado);
         })
 

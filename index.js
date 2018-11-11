@@ -94,12 +94,12 @@ app.get('/cars',async function (req,res) {
             if (error) throw error;
             console.log('The solution is: ', results);
             console.log("hola1" + results)
-            res.send(results);
+            //res.send(results);
             return results;
         })
         connection.end();
         console.log("hola2" + dato)
-        res.send(dato);
+        //res.send(dato);
         return dato;
     });
     console.log("hola3" + dato)

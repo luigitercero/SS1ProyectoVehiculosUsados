@@ -93,11 +93,16 @@ app.get('/cars',async function (req,res) {
         let dato = connection.query(consulta,(error,results,fields)=>{
             if (error) throw error;
             console.log('The solution is: ', results);
+            console.log("hola1" + results)
+            res.send(results);
             return results;
         })
         connection.end();
+        console.log("hola2" + dato)
+        res.send(dato);
         return dato;
     });
+    console.log("hola3" + dato)
     res.send(dato);
 });
 

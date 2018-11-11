@@ -69,10 +69,11 @@ app.post('/createcar', async function (req,res){
             return;
         }
        let consulta = `INSERT INTO mydb.Carro (linea,modelo,descripcion,marca) VALUES (${body.line},${body.model},${body.description},${body.marca})`
-        connection.query(consulta,function(error, results,fields){
+        let dato = connection.query(consulta,function(error, results,fields){
             if (error) throw error;
             console.log('The solution is: ', results);
             dato = results;
+            return results;
         });
         connection.end();
        return dato

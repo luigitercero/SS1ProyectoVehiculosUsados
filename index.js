@@ -94,7 +94,7 @@ app.get('/cars',async function (req,res) {
             if (error) throw error;
             console.log('The solution is: ', results);
             console.log("hola1" + results)
-            //res.send(results);
+            res.send(JSON.stringify(results));
             return results;
         })
         connection.end();

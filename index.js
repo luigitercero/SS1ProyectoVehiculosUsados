@@ -63,13 +63,15 @@ app.post('/createcar', async function (req,res){
 
     var body = req.body;
     console.log(body)
+   console.log("esto debe ser el cuerpo");
     var dato  = connection.connect(function (err) {
         if (err) {
             console.error('error connecting: ' + err.stack);
             return;
         }
-       let consulta = `INSERT INTO mydb.Carro (linea,modelo,descripcion,marca) VALUES (${body.line},${body.model},${body.description},${body.marca})`
-        let dato = connection.query(consulta,function(error, results,fields){
+       //let consulta = `INSERT INTO mydb.Carro (linea,modelo,descripcion,marca) VALUES (${body.line},${body.model},${body.description},${body.marca})`
+        let consulta = "INSERT INTO mydb.Carro (linea,modelo,descripcion,marca) VAULES ("+body.line+","+body.model+","+body.description+","+body.marca+")"
+	let dato = connection.query(consulta,function(error, results,fields){
             if (error) throw error;
             console.log('The solution is: ', results);
             dato = results;
